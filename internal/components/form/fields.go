@@ -1,6 +1,7 @@
 package form
 
 import (
+	"biogrid/internal/entities"
 	"fyne.io/fyne/v2/widget"
 	"strconv"
 )
@@ -20,8 +21,8 @@ func newSchemeField(v int) *widget.Entry {
 }
 
 func newModeSelector() *widget.RadioGroup {
-	rGroup := widget.NewRadioGroup([]string{"Global", "Local"}, func(v string) {})
-	rGroup.SetSelected("Global")
+	rGroup := widget.NewRadioGroup([]string{entities.GlobalAlignment, entities.LocalAlignment}, func(v string) {})
+	rGroup.SetSelected(entities.GlobalAlignment)
 
 	return rGroup
 }
